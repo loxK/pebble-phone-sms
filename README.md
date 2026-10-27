@@ -93,7 +93,7 @@ pebble install --emulator emery      # try it in the emulator
 pebble install --phone <ip>          # install to your watch
 ```
 
-The build produces `build/pebble-phone-sms.pbw`. `package.json` declares the two companion packages allowed to exchange messages with the watchapp: `nc.gecka.pebblephone` and its debug build, `nc.gecka.pebblephone.debug`. The messages they exchange are described in the [protocol](https://github.com/loxK/pebble-phone-sms-android/blob/main/PROTOCOL.md) of the companion, which keeps its keys in step with this `package.json`.
+The build produces `build/pebble-phone-sms.pbw`. `package.json` declares the two companion packages allowed to exchange messages with the watchapp: `io.github.loxk.pebblephone` and its debug build, `io.github.loxk.pebblephone.debug`. The messages they exchange are described in the [protocol](https://github.com/loxK/pebble-phone-sms-android/blob/main/PROTOCOL.md) of the companion, which keeps its keys in step with this `package.json`.
 
 ### Generated files
 

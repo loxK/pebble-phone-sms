@@ -26,8 +26,8 @@
       "android": {
         "url": "https://github.com/loxK/pebble-phone-sms-android/releases/latest",
         "apps": [
-          { "package": "nc.gecka.pebblephone" },
-          { "package": "nc.gecka.pebblephone.debug" }
+          { "package": "io.github.loxk.pebblephone" },
+          { "package": "io.github.loxk.pebblephone.debug" }
         ]
       }
     },
