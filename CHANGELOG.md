@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 (2026-10-27)
+
+- Works with Pebble Phone Connect under its final app ID, `io.github.loxk.pebblephone`. A copy of the companion installed before this release must be uninstalled and replaced with the current one.
+
 ## 1.0.0 (2026-10-27)
 
 First release, for the Android companion Pebble Phone Connect 1.0.0.

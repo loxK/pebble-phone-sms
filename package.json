@@ -1,7 +1,7 @@
 {
   "name": "pebble-phone-sms",
   "author": "Laurent Dinclaux <laurent@gecka.nc>",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "AGPL-3.0-or-later",
   "keywords": ["pebble-app", "dialer", "phone", "sms", "contacts"],
   "private": false,
