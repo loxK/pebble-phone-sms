@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0 (unreleased)
+## 1.0.0 (2026-10-27)
 
 First release, for the Android companion Pebble Phone Connect 1.0.0.
 
