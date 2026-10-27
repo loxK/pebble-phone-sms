@@ -1,0 +1,52 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+env:
+  PEBBLE_SDK: "4.33.1"
+
+jobs:
+  watchapp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Install the Pebble tool
+        run: pip install --upgrade pebble-tool
+
+      - name: Cache the Pebble SDK
+        uses: actions/cache@v6
+        with:
+          path: ~/.local/share/pebble-sdk
+          key: pebble-sdk-${{ env.PEBBLE_SDK }}
+
+      - name: Install the Pebble SDK ${{ env.PEBBLE_SDK }}
+        # `pebble sdk install` exits non-zero when the SDK is already there.
+        run: |
+          if [ -d "$HOME/.local/share/pebble-sdk/SDKs/$PEBBLE_SDK" ]; then
+            echo "SDK $PEBBLE_SDK restored from cache"
+          else
+            pebble sdk install "$PEBBLE_SDK"
+          fi
+
+      - name: Build
+        run: pebble build
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: watchapp
+          path: build/pebble-phone-sms.pbw

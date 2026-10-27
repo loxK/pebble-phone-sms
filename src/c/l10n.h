@@ -1,0 +1,53 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+#pragma once
+
+typedef enum {
+  S_APP_TITLE,
+  S_FAVORITES,
+  S_CONTACTS,
+  S_RECENTS,
+  S_MESSAGES,
+  S_KEYPAD,
+  S_CALL_IN_PROGRESS,
+  S_LOADING,
+  S_EMPTY,
+  S_UNREACHABLE,
+  S_NO_PERMISSION,
+  S_FAILED,
+  S_MORE,
+  S_CALL,
+  S_SEND_SMS,
+  S_REPLY,
+  S_ME,
+  S_INCOMING,
+  S_OUTGOING,
+  S_MISSED,
+  S_REJECTED,
+  S_DIALING,
+  S_RINGING,
+  S_ACTIVE,
+  S_ON_HOLD,
+  S_ENDED,
+  S_DELETE,
+  S_SENT,
+  S_SEND_FAILED,
+  S_NO_COMPANION,
+  S_MUTED,
+  S_SPEAKER,
+  S_BLUETOOTH,
+  S_EARPIECE,
+  S_SEARCH,
+  S_NO_FAVORITES,
+  S_NO_RESULT,
+  S_DICTATE,
+  S_EMOJI,
+  S_GLANCE_MISSED,
+  S_GLANCE_AGE,
+  S_PICTURE,
+  S_OPEN_ON_PHONE,
+  S_SEND_PENDING,
+  S_COUNT
+} StringId;
+
+void l10n_init(void);
+const char *tr(StringId id);

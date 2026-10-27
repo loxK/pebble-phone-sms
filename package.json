@@ -1,0 +1,79 @@
+{
+  "name": "pebble-phone-sms",
+  "author": "Laurent Dinclaux <laurent@gecka.nc>",
+  "version": "1.0.0",
+  "license": "AGPL-3.0-or-later",
+  "keywords": ["pebble-app", "dialer", "phone", "sms", "contacts"],
+  "private": false,
+  "dependencies": {},
+  "pebble": {
+    "displayName": "Phone & SMS",
+    "uuid": "d24d4185-63c5-417a-951a-77d06d5e9720",
+    "sdkVersion": "3",
+    "targetPlatforms": [
+      "basalt",
+      "chalk",
+      "diorite",
+      "emery",
+      "flint",
+      "gabbro"
+    ],
+    "watchapp": {
+      "watchface": false
+    },
+    "capabilities": [],
+    "companionApp": {
+      "android": {
+        "url": "https://github.com/loxK/pebble-phone-sms-android/releases/latest",
+        "apps": [
+          { "package": "nc.gecka.pebblephone" },
+          { "package": "nc.gecka.pebblephone.debug" }
+        ]
+      }
+    },
+    "messageKeys": {
+      "Cmd": 1,
+      "Seq": 2,
+      "Id": 3,
+      "Offset": 4,
+      "Total": 5,
+      "Items": 6,
+      "Text": 7,
+      "Address": 8,
+      "Name": 9,
+      "State": 10,
+      "Flags": 11,
+      "Elapsed": 12,
+      "Status": 13,
+      "Budget": 14,
+      "Size": 15,
+      "BodySize": 16
+    },
+    "resources": {
+      "media": [
+        { "type": "bitmap", "name": "IMAGE_MENU_ICON", "menuIcon": true, "file": "images/menu_icon.png" },
+        { "type": "raw", "name": "SENT_ANIMATION", "file": "pdc/sent.pdc" },
+        { "type": "raw", "name": "WARNING_ICON", "file": "pdc/warning.pdc" },
+        { "type": "raw", "name": "SMS_ICON", "file": "pdc/sms.pdc" },
+        { "type": "raw", "name": "ICON_FAVORITES", "file": "pdc/icon_favorites.pdc" },
+        { "type": "raw", "name": "ICON_CONTACTS", "file": "pdc/icon_contacts.pdc" },
+        { "type": "raw", "name": "ICON_RECENTS", "file": "pdc/icon_recents.pdc" },
+        { "type": "raw", "name": "ICON_WRITE", "file": "pdc/icon_write.pdc" },
+        { "type": "raw", "name": "ICON_SEARCH", "file": "pdc/icon_search.pdc" },
+        { "type": "raw", "name": "ICON_PHONE", "file": "pdc/icon_phone.pdc" },
+        { "type": "raw", "name": "ICON_MICROPHONE", "file": "pdc/icon_microphone.pdc" },
+        { "type": "raw", "name": "ICON_INCOMING", "file": "pdc/icon_incoming.pdc" },
+        { "type": "raw", "name": "ICON_OUTGOING", "file": "pdc/icon_outgoing.pdc" },
+        { "type": "raw", "name": "ICON_MISSED", "file": "pdc/icon_missed.pdc" },
+        { "type": "raw", "name": "ICON_REJECTED", "file": "pdc/icon_rejected.pdc" },
+        { "type": "bitmap", "name": "ARROW_DOWN", "file": "images/arrow_down.png" },
+        { "type": "bitmap", "name": "GLANCE_MISSED_ICON", "file": "images/glance_missed.png" },
+        { "type": "bitmap", "name": "GLANCE_SMS_ICON", "file": "images/glance_sms.png" }
+      ],
+      "publishedMedia": [
+        { "name": "GLANCE_MISSED", "id": 1, "glance": "GLANCE_MISSED_ICON" },
+        { "name": "GLANCE_SMS", "id": 2, "glance": "GLANCE_SMS_ICON" }
+      ]
+    }
+  }
+}

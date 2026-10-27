@@ -1,0 +1,66 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Check the tag against package.json
+        run: |
+          version="$(jq -r .version package.json)"
+          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME, but package.json says $version"
+            exit 1
+          fi
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: watchapp
+
+      - name: Release notes from the changelog
+        run: |
+          awk -v version="${GITHUB_REF_NAME#v}" '
+            index($0, "## " version) == 1 { found = 1; next }
+            /^## / { found = 0 }
+            found
+          ' CHANGELOG.md > notes.md
+          if [ ! -s notes.md ]; then
+            echo "::error::No section for ${GITHUB_REF_NAME#v} in CHANGELOG.md"
+            exit 1
+          fi
+
+      - name: Checksum
+        run: |
+          sha256sum pebble-phone-sms.pbw > pebble-phone-sms.pbw.sha256
+          cat pebble-phone-sms.pbw.sha256
+
+      - name: Attest build provenance
+        uses: actions/attest-build-provenance@v4
+        with:
+          subject-path: pebble-phone-sms.pbw
+
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # A fixed name keeps releases/latest/download/pebble-phone-sms.pbw pointing at the newest.
+          gh release create "$GITHUB_REF_NAME" pebble-phone-sms.pbw pebble-phone-sms.pbw.sha256 \
+            --title "$GITHUB_REF_NAME" --notes-file notes.md

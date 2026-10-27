@@ -1,0 +1,9 @@
+<!-- README banner, 1280 x 320, from the store banner of the watchapp: same gradient, watch drawing and type. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 320" width="1280" height="320">
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#006A6A"/><stop offset="1" stop-color="#003B3B"/></linearGradient></defs>
+  <rect width="1280" height="320" fill="url(#sky)"/>
+  <g transform="translate(250 160) scale(2.9) translate(-54 -54)"><g fill="#FFFFFF"><rect x="27.5" y="43" width="5" height="11" rx="2.5"/><rect x="75.5" y="36" width="5" height="9" rx="2.5"/><rect x="75.5" y="49.5" width="5" height="9" rx="2.5"/><rect x="75.5" y="63" width="5" height="9" rx="2.5"/></g><rect x="33" y="29" width="42" height="50" rx="11" fill="none" stroke="#FFFFFF" stroke-width="5"/><path fill="#FFFFFF" transform="translate(40.8 40.8) scale(1.1)" d="M6.62,10.79c1.44,2.83 3.76,5.14 6.59,6.59l2.2,-2.2c0.27,-0.27 0.67,-0.36 1.02,-0.24 1.12,0.37 2.33,0.57 3.57,0.57 0.55,0 1,0.45 1,1V20c0,0.55 -0.45,1 -1,1 -9.39,0 -17,-7.61 -17,-17 0,-0.55 0.45,-1 1,-1h3.5c0.55,0 1,0.45 1,1 0,1.25 0.2,2.45 0.57,3.57 0.11,0.35 0.03,0.74 -0.25,1.02l-2.2,2.2z"/></g>
+  <text x="420" y="150" font-family="Noto Sans" font-weight="bold" font-size="64" fill="#FFFFFF">Phone &amp; SMS for Pebble</text>
+  <text x="422" y="200" font-family="Noto Sans" font-size="28" fill="#BFE3E3">Calls, contacts and text messages on your Pebble.</text>
+  <text x="422" y="238" font-family="Noto Sans" font-size="21" fill="#8CC5C5">Open source, private by design.</text>
+</svg>

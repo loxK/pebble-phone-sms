@@ -1,0 +1,12 @@
+build/
+*.pbw
+.lock-waf_*
+.waf-*
+.waf3-*
+pebble_screenshot_*.png
+
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store

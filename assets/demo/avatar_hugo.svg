@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Made-up contact for the demo build. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" fill="#F6C85F"/>
+  
+  <rect x="50" y="74" width="20" height="22" rx="7" fill="#C68B63"/>
+  <ellipse cx="60" cy="122" rx="42" ry="30" fill="#3B6EA5"/>
+  <ellipse cx="60" cy="56" rx="23" ry="27" fill="#C68B63"/>
+  <path d="M37 48 C36 24 84 24 83 48 C76 38 46 36 37 48 Z" fill="#1E1E1E"/><path d="M40 66 C42 86 78 86 80 66 C76 80 44 80 40 66 Z" fill="#1E1E1E"/>
+  <ellipse cx="51" cy="58" rx="2.6" ry="3.2" fill="#2b2b2b"/>
+  <ellipse cx="69" cy="58" rx="2.6" ry="3.2" fill="#2b2b2b"/>
+  <path d="M52 70 Q60 77 68 70" fill="none" stroke="#7a3b2e" stroke-width="2.6" stroke-linecap="round"/>
+</svg>
