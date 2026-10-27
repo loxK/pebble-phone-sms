@@ -1,6 +1,7 @@
 <img src=".github/readme/banner.png" alt="Phone &amp; SMS for Pebble: calls, contacts and text messages on your Pebble. Open source, private by design.">
 
 [![Latest release](https://img.shields.io/github/v/release/loxK/pebble-phone-sms?sort=semver&color=2ea44f)](https://github.com/loxK/pebble-phone-sms/releases/latest)
+[![Pebble App Store](https://img.shields.io/badge/Pebble_App_Store-Phone_%26_SMS-4b6cb7)](https://apps.repebble.com/17f971c5ad5e4d0babfb4742)
 [![Download .pbw](https://img.shields.io/badge/download-.pbw-2ea44f)](https://github.com/loxK/pebble-phone-sms/releases/latest/download/pebble-phone-sms.pbw)
 [![Android companion](https://img.shields.io/badge/Android-Pebble_Phone_Connect-1976d2)](https://github.com/loxK/pebble-phone-sms-android)
 [![Build](https://github.com/loxK/pebble-phone-sms/actions/workflows/build.yml/badge.svg)](https://github.com/loxK/pebble-phone-sms/actions/workflows/build.yml)
@@ -16,7 +17,8 @@ Phone & SMS brings favorites, contacts, the call log, call control and SMS and R
 
 [<img src="https://raw.githubusercontent.com/Kunzisoft/Github-badge/main/get-it-on-github.png" alt="Get it on GitHub" height="80">](https://github.com/loxK/pebble-phone-sms/releases/latest)
 
-- ⬇️ Download the latest **[`pebble-phone-sms.pbw`](https://github.com/loxK/pebble-phone-sms/releases/latest/download/pebble-phone-sms.pbw)** and install it with the Pebble app.
+- 📲 **[Install from the Pebble App Store](https://apps.repebble.com/17f971c5ad5e4d0babfb4742)**.
+- ⬇️ Or download the latest **[`pebble-phone-sms.pbw`](https://github.com/loxK/pebble-phone-sms/releases/latest/download/pebble-phone-sms.pbw)** and install it with the Pebble app.
 - 📱 Install **[Pebble Phone Connect](https://github.com/loxK/pebble-phone-sms-android)** on the phone and complete its setup.
 - 📝 What changed in each version: [`CHANGELOG.md`](CHANGELOG.md).
 
