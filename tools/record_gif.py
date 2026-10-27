@@ -2,9 +2,11 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 """Records an animated GIF of a running emulator while pressing its buttons.
 
-Frames come from the QEMU monitor (screendump), as `pebble screenshot` does. Each
-frame is brought back to full brightness, since the display dims with the
-backlight, then snapped to the 64 colours of the watch.
+Frames come from the QEMU monitor (screendump). Each frame is brought back to
+full brightness, since the display dims with the backlight, then snapped to the
+64 colours of the watch. The SDK emulator of basalt frames its display with a
+2-pixel border that `pebble screenshot` leaves out: frames are cropped to the
+screen of the platform, centred.
 
 Buttons go through the QEMU protocol, as `pebble emu-button` does but over one
 connection kept open: a press, then a release PRESS_S later. The monitor's
@@ -45,6 +47,14 @@ PRESS_S = 0.1
 # The pypkjs websocket opcode that relays a QEMU protocol message.
 RELAY_QEMU = 0x0B
 WORK = Path(__file__).resolve().parent.parent / "build" / "gif"
+SCREENS = {
+    "basalt": (144, 168),
+    "chalk": (180, 180),
+    "diorite": (144, 168),
+    "emery": (200, 228),
+    "flint": (144, 168),
+    "gabbro": (260, 260),
+}
 
 
 def emulator(platform: str) -> dict:
@@ -200,15 +210,16 @@ def main() -> None:
         frame.rename(directory / "seq_{:05d}.ppm".format(index))
     sequence = str(directory / "seq_%05d.ppm")
     palette = directory / "palette.png"
+    crop = "crop={}:{}".format(*SCREENS[platform])
     subprocess.run(
         ["ffmpeg", "-v", "error", "-y", "-framerate", str(FPS), "-i", sequence,
-         "-vf", "palettegen=max_colors=64:reserve_transparent=0", str(palette)],
+         "-vf", crop + ",palettegen=max_colors=64:reserve_transparent=0", str(palette)],
         check=True,
     )
     output.parent.mkdir(parents=True, exist_ok=True)
     subprocess.run(
         ["ffmpeg", "-v", "error", "-y", "-framerate", str(FPS), "-i", sequence, "-i", str(palette),
-         "-filter_complex", "paletteuse=dither=none", str(output)],
+         "-filter_complex", "[0:v]" + crop + "[screen];[screen][1:v]paletteuse=dither=none", str(output)],
         check=True,
     )
     shutil.rmtree(directory, ignore_errors=True)
